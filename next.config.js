@@ -3,32 +3,9 @@
 const CopyPlugin = require('copy-webpack-plugin');
 
 const nextConfig = {
-  webpack: (config) => {
-    const customPlugins = [
-      new CopyPlugin({
-        patterns: [
-          {
-            from: 'node_modules/bootstrap/dist/js/bootstrap.js',
-            to: 'static/bootstrap.js',
-          },
-        ],
-      }),
-    ];
-
-    config.plugins.push(...customPlugins);
-
-    return config;
-  },
   output: 'export',
   basePath: '/project-puok',
-  images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'github.com'
-      },
-    ],
-  },
+  images: {},
 };
 
 module.exports = nextConfig;

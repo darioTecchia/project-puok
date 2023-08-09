@@ -2,13 +2,14 @@
 
 import DietWeek from '@/app/components/DietWeek/DietWeek';
 import DishesSummary from '@/app/components/DishesSummary/DishesSummary';
+import AppointmentsCalendar from '@/app/components/AppointmentsCalendar/AppointmentsCalendar';
+import DietStats from '@/app/components/DietStats/DietStats';
 import { Diet, Dish } from '@/models/Diet';
 import { EXAMPLE_USERS } from '@/models/example';
 import { User } from '@/models/User';
 import { useState } from 'react';
 
 import './diet.scss';
-import DietStats from '@/app/components/DietStats/DietStats';
 
 const USER: User = EXAMPLE_USERS[0];
 const DIET: Diet = USER.diets[0];
@@ -42,34 +43,44 @@ export default function Diet() {
           <div className="card-header">
             Dieta
           </div>
-          {
-            DIET.weeks.map((week, index) =>
-            (
-              <div className='card-body' key={index}>
-                <h5 className="card-title sticky-top">Settimana {index + 1}</h5>
+          <div className="card-body">
+            {
+              DIET.weeks.map((week, index) =>
+              (
+                <div className='mb-4' key={index}>
+                  <h5 className="card-title sticky-top">Settimana {index + 1}</h5>
+                  <div className="card-text">
+                    <DietWeek data={week} weekIndex={index} selectDish={selectDish} />
+                  </div>
+                </div>
+              ))
+            }
+            <div className="card">
+              <div className="card-header">
+                Riassunto
+              </div>
+              <div className="card-body">
                 <div className="card-text">
-                  <DietWeek data={week} weekIndex={index} selectDish={selectDish} />
+                  <DishesSummary dishesMap={selectedDishesMap} />
                 </div>
               </div>
-            ))
-          }
-        </div>
-
-        <div className="card mb-4">
-          <div className="card-header">
-            Riassunto
-          </div>
-          <div className="card-body">
-            <div className="card-text">
-              <DishesSummary dishesMap={selectedDishesMap} />
             </div>
           </div>
         </div>
 
-        <div className="card">
+        <div className="card mb-4">
           <div className="card-header">Andamento dieta</div>
           <div className="card-body">
             <DietStats periodicChecks={USER.periodicChecks} />
+          </div>
+        </div>
+
+        <div className="card">
+          <div className="card-header">
+            Calendario appuntamenti
+          </div>
+          <div className="card-body">
+            <AppointmentsCalendar appointments={USER.periodicChecks} />
           </div>
         </div>
       </div>

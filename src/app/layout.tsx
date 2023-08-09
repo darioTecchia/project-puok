@@ -2,7 +2,6 @@ import "bootstrap/scss/bootstrap.scss";
 import './globals.scss'
 
 import type { Metadata } from 'next'
-import Script from "next/script";
 
 export const metadata: Metadata = {
   title: 'PUOK',
@@ -16,11 +15,6 @@ export default function RootLayout({
 }) {
   return (
     <html>
-      <head>
-        <Script
-          src="/_next/static/bootstrap.js"
-        />
-      </head>
       <body>
         {children}
       </body>

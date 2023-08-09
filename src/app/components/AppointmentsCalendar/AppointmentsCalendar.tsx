@@ -7,13 +7,13 @@ import { EventSourceInput } from "@fullcalendar/core/index.js";
 import { PeriodicCheck } from "@/models/User";
 import dayjs from "dayjs";
 
-export default function AppointmentsCalendar({ appointments }: { appointments: (PeriodicCheck & { name: string })[] }) {
+export default function AppointmentsCalendar({ appointments }: { appointments: (PeriodicCheck & { name?: string })[] }) {
 
   const events: EventSourceInput = appointments.map(appointment => {
     return {
       date: appointment.date,
       end: dayjs(appointment.date).add(1, 'hour').toDate(),
-      title: appointment.name,
+      title: appointment.name || 'Appuntamento',
     }
   })
 
@@ -25,7 +25,7 @@ export default function AppointmentsCalendar({ appointments }: { appointments: (
         plugins={[dayGridPlugin, timeGridPlugin]}
         initialView="dayGridMonth"
         headerToolbar={{
-          left: 'prev,next',
+          left: 'prev,today,next',
           center: 'title',
           right: 'dayGridMonth,timeGridWeek,timeGridDay' // user can switch between the two
         }}
