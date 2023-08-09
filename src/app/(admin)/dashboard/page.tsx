@@ -36,7 +36,7 @@ export default function Dashboard() {
       <div className='container'>
         <div className='mb-4'>
           <h1 className='display-1'>Benvenuto, Admin!</h1>
-          All&apos;interno di questa pagina troverai tutti i tuoi pazienti con indicata la data dell'ultimo appuntamento o del prossimo appuntamento.
+          All&apos;interno di questa pagina troverai tutti i tuoi pazienti con indicata la data dell&apos;ultimo appuntamento o del prossimo appuntamento.
           <br />
           Clicca sul paziente per accedere alla sezione dedicata a lui: potrai vedere o modificare la sua dieta, visualizzare il suo andamento e gestire il suo profilo.
         </div>

@@ -36,7 +36,7 @@ export default function NewUserForm({ onSubmit }: { onSubmit: any }) {
         <div className="col-md-4">
           <label htmlFor="email" className="form-label mb-1">Email</label>
           <input type="email" className={"form-control " + (errors.email ? "is-invalid" : "")} id="email" {...register("email", { required: true, pattern: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/i })} />
-          {errors.email && <div className="text-danger">Inserisci un'email valida!</div>}
+          {errors.email && <div className="text-danger">Inserisci un&apos;email valida!</div>}
         </div>
         <div className="col-md-4">
           <label htmlFor="password" className="form-label mb-1">Password</label>
