@@ -1,12 +1,4 @@
-import Image from "next/image";
-import Link from "next/link";
 import { Dish } from "@/models/Diet";
-
-import dayjs from "dayjs";
-require('dayjs/locale/it')
-var localizedFormat = require('dayjs/plugin/localizedFormat')
-dayjs.extend(localizedFormat)
-dayjs.locale('it')
 
 export default function DishesSummary({ dishesMap }: { dishesMap: { [key: string]: Dish } }) {
 
