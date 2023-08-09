@@ -6,6 +6,7 @@ import { EXAMPLE_DIET } from '@/models/example';
 import { useState } from 'react';
 
 import './diet.scss';
+import DishesSummary from '@/app/components/DishesSummary/DishesSummary';
 
 const DIET: Diet = EXAMPLE_DIET;
 
@@ -22,28 +23,6 @@ export default function Diet() {
       selectedDishesMap[key] = value;
     }
     setSelectedDishesMap({ ...selectedDishesMap })
-  }
-
-  const reduceDishes = (dishes: Dish[]): Dish[] => {
-
-    const aggregatedMap = new Map<string, number>();
-
-    for (const item of dishes) {
-      const { dish, measure } = item;
-      if (aggregatedMap.has(dish)) {
-        aggregatedMap.set(dish, aggregatedMap.get(dish)! + measure);
-      } else {
-        aggregatedMap.set(dish, measure);
-      }
-    }
-
-    const aggregatedList: Dish[] = Array.from(aggregatedMap, ([dish, measure]) => ({
-      dish,
-      measure,
-      unityOfMeasure: dishes.find(item => item.dish === dish)?.unityOfMeasure || ""
-    }));
-
-    return aggregatedList;
   }
 
   return (
@@ -78,22 +57,8 @@ export default function Diet() {
             Riassunto
           </div>
           <div className="card-body">
-            {/* <h5 className="card-title">Special title treatment</h5> */}
             <div className="card-text">
-              {reduceDishes(Object.values(selectedDishesMap)).length > 0 ?
-                <ul className="list-group">
-                  {
-                    reduceDishes(Object.values(selectedDishesMap)).map(dish => (
-                      <li key={dish.dish} className="list-group-item d-flex justify-content-between align-items-center ">
-                        {dish.dish}
-                        <span className="badge text-bg-light"> {dish.measure} {dish.unityOfMeasure}</span>
-                      </li>
-                    ))
-                  }
-                </ul>
-                :
-                <div>Seleziona le portate per far comparire qui la somma delle quantità.</div>
-              }
+              <DishesSummary dishesMap={selectedDishesMap} />
             </div>
           </div>
         </div>
