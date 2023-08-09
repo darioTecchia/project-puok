@@ -19,6 +19,8 @@ const nextConfig = {
 
     return config;
   },
+  output: 'export',
+  basePath: '/project-puok',
   images: {
     remotePatterns: [
       {
