@@ -771,11 +771,83 @@ export const EXAMPLE_USERS: User[] = [
     diets: [EXAMPLE_DIET],
     periodicChecks: [
       {
+        circumference: 78,
+        date: new Date('08/14/2023 20:00'),
+        fatMass: 55,
+        leanMass: 45,
+        water: 58,
+        weight: 73
+      },
+      {
+        circumference: 82,
+        date: new Date('08/05/2023 20:00'),
+        fatMass: 58,
+        leanMass: 42,
+        water: 54,
+        weight: 78
+      },
+      {
+        circumference: 75,
+        date: new Date('08/20/2023 20:00'),
+        fatMass: 52,
+        leanMass: 48,
+        water: 62,
+        weight: 70
+      },
+      {
+        circumference: 77,
+        date: new Date('08/18/2023 20:00'),
+        fatMass: 49,
+        leanMass: 51,
+        water: 59,
+        weight: 71
+      },
+      {
+        circumference: 83,
+        date: new Date('08/10/2023 20:00'),
+        fatMass: 57,
+        leanMass: 43,
+        water: 57,
+        weight: 76
+      },
+      {
+        circumference: 79,
+        date: new Date('08/01/2023 20:00'),
+        fatMass: 54,
+        leanMass: 46,
+        water: 61,
+        weight: 74
+      },
+      {
+        circumference: 81,
+        date: new Date('08/03/2023 20:00'),
+        fatMass: 59,
+        leanMass: 41,
+        water: 55,
+        weight: 77
+      },
+      {
+        circumference: 74,
+        date: new Date('08/25/2023 20:00'),
+        fatMass: 53,
+        leanMass: 47,
+        water: 63,
+        weight: 69
+      },
+      {
+        circumference: 76,
+        date: new Date('08/22/2023 20:00'),
+        fatMass: 56,
+        leanMass: 44,
+        water: 58,
+        weight: 72
+      },
+      {
         circumference: 80,
-        date: new Date('08/12/2023 20:00'),
-        fatMass: 60,
-        leanMass: 30,
-        water: 56,
+        date: new Date('08/08/2023 20:00'),
+        fatMass: 51,
+        leanMass: 49,
+        water: 60,
         weight: 75
       }
     ]

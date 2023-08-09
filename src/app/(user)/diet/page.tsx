@@ -1,14 +1,17 @@
 "use client";
 
 import DietWeek from '@/app/components/DietWeek/DietWeek';
+import DishesSummary from '@/app/components/DishesSummary/DishesSummary';
 import { Diet, Dish } from '@/models/Diet';
-import { EXAMPLE_DIET } from '@/models/example';
+import { EXAMPLE_USERS } from '@/models/example';
+import { User } from '@/models/User';
 import { useState } from 'react';
 
 import './diet.scss';
-import DishesSummary from '@/app/components/DishesSummary/DishesSummary';
+import DietStats from '@/app/components/DietStats/DietStats';
 
-const DIET: Diet = EXAMPLE_DIET;
+const USER: User = EXAMPLE_USERS[0];
+const DIET: Diet = USER.diets[0];
 
 export default function Diet() {
 
@@ -52,7 +55,7 @@ export default function Diet() {
           }
         </div>
 
-        <div className="card">
+        <div className="card mb-4">
           <div className="card-header">
             Riassunto
           </div>
@@ -60,6 +63,13 @@ export default function Diet() {
             <div className="card-text">
               <DishesSummary dishesMap={selectedDishesMap} />
             </div>
+          </div>
+        </div>
+
+        <div className="card">
+          <div className="card-header">Andamento dieta</div>
+          <div className="card-body">
+            <DietStats periodicChecks={USER.periodicChecks} />
           </div>
         </div>
       </div>
