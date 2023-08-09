@@ -1,4 +1,5 @@
 import { Diet } from "./Diet";
+import { User } from "./User";
 
 export const EXAMPLE_DIET: Diet = {
   "isArchived": false,
@@ -758,3 +759,63 @@ export const EXAMPLE_DIET: Diet = {
     }
   ]
 };
+
+export const EXAMPLE_USERS: User[] = [
+  {
+    isDoctor: false,
+    email: 'dariotecchia@gmail.com',
+    password: '1234',
+    firstName: 'Dario',
+    lastName: 'Tecchia',
+    id: 'asdasdasda',
+    diets: [EXAMPLE_DIET],
+    periodicChecks: [
+      {
+        circumference: 80,
+        date: new Date('08/12/2023 20:00'),
+        fatMass: 60,
+        leanMass: 30,
+        water: 56,
+        weight: 75
+      }
+    ]
+  },
+  {
+    isDoctor: false,
+    email: 'mariorossi@gmail.com',
+    password: '1234',
+    firstName: 'Mario',
+    lastName: 'Rossi',
+    id: 'asdasdasda',
+    diets: [EXAMPLE_DIET],
+    periodicChecks: [
+      {
+        circumference: 80,
+        date: new Date('08/09/2023 20:00'),
+        fatMass: 60,
+        leanMass: 30,
+        water: 56,
+        weight: 75
+      }
+    ]
+  },
+  {
+    isDoctor: false,
+    email: 'gianlucavacchi@gmail.com',
+    password: '1234',
+    firstName: 'Gianlucone',
+    lastName: 'Vacchi',
+    id: 'asdasdasda',
+    diets: [EXAMPLE_DIET],
+    periodicChecks: [
+      {
+        circumference: 80,
+        date: new Date('08/02/2023 20:00'),
+        fatMass: 60,
+        leanMass: 30,
+        water: 56,
+        weight: 75
+      }
+    ]
+  }
+]

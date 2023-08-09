@@ -3,9 +3,9 @@
 import DietWeek from '@/app/components/DietWeek/DietWeek';
 import { Diet, Dish } from '@/models/Diet';
 import { EXAMPLE_DIET } from '@/models/example';
+import { useState } from 'react';
 
 import './diet.scss';
-import { useState } from 'react';
 
 const DIET: Diet = EXAMPLE_DIET;
 
@@ -98,6 +98,6 @@ export default function Diet() {
           </div>
         </div>
       </div>
-    </main >
+    </main>
   );
 }

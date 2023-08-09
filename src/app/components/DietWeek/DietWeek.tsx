@@ -24,9 +24,9 @@ export default function DietWeek({ data, weekIndex, selectDish }: { data: DietWe
           {
             data.days.map((day, dayIndex) => (
               <tr key={concatIDs(weekIndex, dayIndex)}>
-                <td scope="row" className='align-middle text-center'>
-                  <strong>{DAY_MAP[dayIndex]}</strong>
-                </td>
+                <th scope="row" className='align-middle text-center'>
+                  {DAY_MAP[dayIndex]}
+                </th>
                 {
                   day.meals.map((meal, mealIndex) => (
                     <td key={concatIDs(weekIndex, dayIndex, mealIndex)} className='align-middle text-center'>
