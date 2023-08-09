@@ -27,11 +27,14 @@ export default function Home() {
           <input type="password" className="form-control" id="password" placeholder="Password" />
           <label htmlFor="password">Password</label>
         </div>
-        <div className="form-check text-start my-3">
+        <div className="form-check text-start mt-3">
           <input onChange={() => setIsAdmin(!isAdmin)} checked={isAdmin} className="form-check-input" type="checkbox" id="flexCheckDefault" />
           <label className="form-check-label" htmlFor="flexCheckDefault">
             Admin?
           </label>
+        </div>
+        <div className='text-muted mb-3'>
+          La login è ancora mockata, spunta questa casella e clicca su <strong>Accedi</strong> per accedere alla sezione admin.
         </div>
         <button onClick={nav} className="btn btn-primary w-100 py-2" type="submit">Accedi</button>
       </div>
