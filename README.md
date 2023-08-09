@@ -1,34 +1,61 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+# Progetto PUOK
+Progetto giocattolo per lo studio del framework React/Next.
 
-First, run the development server:
+## Attori
+- Dottore
+- Paziente
+
+## Scenari
+- Dottore
+    1. Può aggiungere uno o più pazienti all’interno della piattaforma.
+    2. Per ogni paziente, può creare una o più diete composte a loro volta da una più settimana e gestire l'andamento di quest'ultima.
+    3. Visualizzazione appuntamenti tramite calendario.
+- Paziente
+    1. Consultare la propria dieta.
+    2. Modificare le proprie credenziali d’accesso.
+    3. Calcolare la spesa da fare in base alle quantità delle pietanze all’interno delle caselle selezionate all’interno della settimana.
+    4. Export della dieta.
+
+## Requisiti Funzionali
+- Dottore
+    1. Aggiunta di pazienti all’interno della piattaforma web.
+    2. Per ogni paziente, creazione/modifica/ripristino delle credenziali d’accesso.
+    3. Per ogni paziente, creazione/modifica di diete composte da 1 o più settimane
+    4. Ogni settimana conterrà per ogni riga un giorno della settimana (Lun -> Dom) e per ogni colonna i vari pasti (Colazione, Spuntino 1, Pranzo, Spuntino 2, Cena).
+    5. Ogni pasto conterrà le pietanze (per facilitare il calcolo spesa, vedi scenario *Paziente - 3*).
+    6. Per ogni paziente, inserimento/modifica di dati riguardanti l’andamento della dieta (KPI) sotto forma di grafici.
+    7. Storicizzare/Archiviare diete passate
+    8. Visualizzazione appuntamenti tramite calendario.
+- Paziente
+    1. Visualizzazione della dieta.
+    2. Modificare le proprie credenziali d’accesso.
+    3. Selezionando le celle (giorni/pasto) di una settimana, deve essere calcolata la spesa necessaria da fare.
+    4. Esportazione della dieta in formato excel o PDF (stampa).
+
+## Views
+Qui di seguito sono indicate le path attualmente accessibili, il simbolo indica lo stato attuale dei lavori. Anche le view con ✅ sono da considerarsi in WIP.
+
+- ✅ Home Page (/) Login
+- ✅ Dottore (/dashboard) **Pazienti, utenze, calendario appuntamenti**
+    - 🚧 Utenti (/users/[id]) **Modifica credenziali paziente, andamento dieta, statistiche, impostazioni dieta**
+- ✅ Paziente (/diet) **Visualizzazione dieta, andamento dieta, modifica credenziali**
+
+## Primi Passi
+
+Per prima cosa, avvia il server di sviluppo:
 
 ```bash
 npm run dev
-# or
+# oppure
 yarn dev
-# or
+# oppure
 pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Apri [http://localhost:3000/project-puok](http://localhost:3000/project-puok) nel tuo browser per vedere il risultato.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Puoi iniziare a modificare la pagina modificando `app/page.tsx`. La pagina si aggiornerà automaticamente mentre modifichi il file.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Questo progetto utilizza [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) per ottimizzare e caricare automaticamente Inter, un carattere personalizzato di Google Font.
