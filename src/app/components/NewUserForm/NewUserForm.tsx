@@ -2,8 +2,6 @@
 
 import { SubmitHandler, useForm } from "react-hook-form";
 import { User } from "@/models/User";
-
-import "./NewUserForm.scss";
 import { useState } from "react";
 
 export default function NewUserForm({ onSubmit }: { onSubmit: any }) {

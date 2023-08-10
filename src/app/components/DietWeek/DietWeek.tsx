@@ -1,8 +1,6 @@
 import { DietWeek } from '@/models/Diet';
 import { concatIDs } from '@/app/utils';
 
-import './DietWeek.scss';
-
 const DAY_MAP: string[] = ['Lunedì', 'Martedì', 'Mercoledì', 'Giovedì', 'Venerdì', 'Sabato', 'Domenica']
 
 export default function DietWeek({ data, weekIndex, selectDish }: { data: DietWeek, weekIndex: number, selectDish: any }) {

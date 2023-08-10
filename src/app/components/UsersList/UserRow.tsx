@@ -1,5 +1,4 @@
 import { User } from "@/models/User";
-import Image from "next/image";
 import Link from "next/link";
 
 import dayjs from "dayjs";

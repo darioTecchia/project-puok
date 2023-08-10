@@ -8,8 +8,6 @@ import NewUserForm from "@/app/components/NewUserForm/NewUserForm";
 import UsersList from "@/app/components/UsersList/UsersList";
 import AppointmentsCalendar from "@/app/components/AppointmentsCalendar/AppointmentsCalendar";
 
-import "./dashboard.scss";
-
 let USERS: User[] = EXAMPLE_USERS;
 
 export default function Dashboard() {
