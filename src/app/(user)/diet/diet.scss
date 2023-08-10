@@ -2,4 +2,9 @@
   .list-group-item {
     max-width: 430px;
   }
+
+  .week-title,
+  .resume-wrapper {
+    top: var(--bs-card-spacer-x);
+  }
 }
