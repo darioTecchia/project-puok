@@ -7,15 +7,17 @@ import { EventSourceInput } from "@fullcalendar/core/index.js";
 
 import { PeriodicCheck } from "@/models/User";
 import dayjs from "dayjs";
+dayjs.locale('it');
 
 export default function AppointmentsCalendar({ appointments }: { appointments: (PeriodicCheck & { name?: string })[] }) {
 
   const events: EventSourceInput = appointments.map(appointment => {
+    const endDate = dayjs(appointment.date).add(1, 'hour').toDate();
     return {
       date: appointment.date,
-      end: dayjs(appointment.date).add(1, 'hour').toDate(),
+      end: endDate,
       title: appointment.name || 'Appuntamento',
-      url: 'asdasda'
+      url: `https://calendar.google.com/calendar/render?action=TEMPLATE&dates=${dayjs(appointment.date).format('YYYYMMDDTHHmmssZ')}%2F${dayjs(endDate).format('YYYYMMDDTHHmmssZ')}&details=Appuntamento${appointment.name ? ' con ' + appointment.name : ' Dietologo'}&location=&text=Appuntamento${appointment.name ? ' con ' + appointment.name : ' Dietologo'}`
     }
   })
 
@@ -34,7 +36,7 @@ export default function AppointmentsCalendar({ appointments }: { appointments: (
       ]}
       eventClick={(info) => {
         info.jsEvent.preventDefault();
-        console.log(info.event);
+        window.open(info.event.url);
       }}
       navLinks={true}
       locale={itLocale}

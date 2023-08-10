@@ -44,7 +44,7 @@ export default function Diet() {
         </div>
         <div className="card-body">
           <div className="row">
-            <div className="col-md-12 col-lg-8 mb-md-3 mb-lg-0">
+            <div className="col-md-12 col-lg-8 mb-3 mb-lg-0">
               {
                 DIET.weeks.map((week, index) =>
                 (
@@ -83,7 +83,7 @@ export default function Diet() {
           </div>
         </div>
 
-        <div className="col col-md-12 col-lg-6">
+        <div className="col-md-12 col-lg-6">
           <div className="card">
             <div className="card-header">
               Calendario appuntamenti
