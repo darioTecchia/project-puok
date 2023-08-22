@@ -16,7 +16,11 @@ export default function UserRow({ user }: { user: User }) {
           <h6 className="mb-0">{user.firstName} {user.lastName}</h6>
           <p className="mb-0 opacity-75">{user.email}</p>
         </div>
-        <small className="opacity-50 text-nowrap">{dayjs(user.periodicChecks[user.periodicChecks.length - 1].date).format('llll')}</small>
+        <small className="opacity-50 text-nowrap">
+          {dayjs(user.periodicChecks[user.periodicChecks.length - 1].date).format('llll')}
+          <br />
+          <span className="user-detail-label text-decoration-underline fw-semibold">Vai ai dettagli</span>
+        </small>
       </div>
     </Link>
   )

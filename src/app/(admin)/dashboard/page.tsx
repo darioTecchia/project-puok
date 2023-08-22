@@ -30,8 +30,8 @@ export default function Dashboard() {
   const [users, setUsers] = useState(USERS);
 
   return (
-    <main id='dashboard' className='py-4'>
-      <div className='container'>
+    <main id='dashboard'>
+      <div className='container py-3'>
         <div className='mb-4'>
           <h1 className='display-1'>Benvenuto, Admin!</h1>
           All&apos;interno di questa pagina troverai tutti i tuoi pazienti con indicata la data dell&apos;ultimo appuntamento o del prossimo appuntamento.

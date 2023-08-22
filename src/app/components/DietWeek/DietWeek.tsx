@@ -8,7 +8,7 @@ import "./DietWeek.scss"
 export default function DietWeek({ data, weekIndex, selectDish }: { data: DietWeek, weekIndex: number, selectDish: any }) {
 
   return (
-    <main id='diet-week' className='table-responsive'>
+    <main id='DietWeek' className='table-responsive'>
       <table className='table table-bordered table-striped mb-0'>
         <thead>
           <tr>

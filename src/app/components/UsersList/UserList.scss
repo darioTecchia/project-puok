@@ -1,0 +1,13 @@
+#UserList {
+  .list-group-item {
+    .user-detail-label {
+      display: none;
+    }
+
+    &:hover {
+      .user-detail-label {
+        display: block;
+      }
+    }
+  }
+}
